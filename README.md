@@ -55,7 +55,6 @@ Available commands are:
     config      Generate and Validate DeepSource config
     help        Help about any command
     issues      Show the list of issues in a file in a repository
-                Use --commit <sha> to list issues from a specific commit's analysis run
     repo        Operations related to the project repository
     report      Report artifacts to DeepSource
     version     Get the version of the DeepSource CLI
