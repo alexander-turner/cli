@@ -55,6 +55,7 @@ Available commands are:
     config      Generate and Validate DeepSource config
     help        Help about any command
     issues      Show the list of issues in a file in a repository
+                Use --commit <sha> to list issues from a specific commit's analysis run
     repo        Operations related to the project repository
     report      Report artifacts to DeepSource
     version     Get the version of the DeepSource CLI
@@ -62,6 +63,21 @@ Available commands are:
 Help:
     Use 'deepsource <command> --help/-h' for more information about the command.
 ```
+
+### Listing Issues by Commit
+
+You can list issues found in the analysis run for a specific commit using the `--commit` flag (resolves [#261](https://github.com/DeepSourceCorp/cli/issues/261)):
+
+```sh
+# List issues for a specific commit SHA
+deepsource issues list --commit abc123def456
+
+# Combine with other flags
+deepsource issues list --commit abc123 --analyzer python --limit 50
+deepsource issues list --commit abc123 --json --output-file results.json
+```
+
+This is useful for checking issues on PR branches and non-default branches where DeepSource has already run analysis.
 
 ## Documentation
 
